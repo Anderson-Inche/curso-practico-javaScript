@@ -29,12 +29,12 @@ console.log("Los lados del triangulo miden: " + ladoTriangulo1+ " cm , "+ ladoTr
 //console.log("La altura del triángulo es de : " + alturaTriangulo);
 
 function perimetroTriangulo(lado1,lado2,base){
-    return lado1 + lado2+ base;
+    return lado1 + lado2 + base;
 } 
 //console.log("La perímetro del triángulo es : " + perimetroTriangulo);
 
 function areaTriangulo(base, altura){
-    return (baseTriangulo * alturaTriangulo) / 2;
+    return (base * altura) / 2;
 } 
 //console.log("El area del triangulo : " + areaTriangulo);
 
@@ -55,6 +55,16 @@ function areaCirculo(radio) {
 }
 
 console.groupEnd();
+function validarTriangulo(lado1,lado2,base) {
+    if (lado1 === lado2)
+        return 1;
+    else if (lado2 === base)
+        return 1;
+    else if (base === lado1)
+        return 1;
+
+    return 0;
+}
 
 //AQUI INTERACTUAMOS CON EL HTML
 
@@ -71,5 +81,37 @@ function calcularAreaCuadrado() {
     const value = input.value;
 
     const area = areaCuadrado(value);
+    alert(area);
+}
+function validarTrianguloIsosceles() {
+    const lado1 = document.getElementById("InputLado1").value;
+    const lado2 = document.getElementById("InputLado2").value;
+    const base = document.getElementById("InputBase").value;
+
+    const band = validarTriangulo(lado1,lado2,base);
+    if (band === 1)
+        alert("Es Isósceles");
+    else     alert("No es Isósceles");
+}
+function calcularAltura() {
+    const base = document.getElementById("InputBase").value;
+    const a = document.getElementById("InputLado2").value;
+    const altura = Math.sqrt( (a*a) - ((base*base)/4 ));
+    alert(altura);
+    return altura;
+}
+function calcularPerimetroTriangulo() {
+    const lado1 = document.getElementById("InputLado1").value;
+    const lado2 = document.getElementById("InputLado2").value;
+    const base = document.getElementById("InputBase").value;
+
+    const perimetro = perimetroTriangulo(lado1,lado2,base);
+    alert(perimetro);
+}
+function calcularAreaTriangulo() {
+    const base = document.getElementById("InputBase").value;
+    const a = document.getElementById("InputLado2").value;
+    const altura = Math.sqrt( (a*a) - ((base*base)/4 ));
+    const area = areaTriangulo(base,altura);
     alert(area);
 }

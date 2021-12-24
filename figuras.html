@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
     <title>Figuras geométricas | Curso Practico</title>
 </head>
 <body>
@@ -14,16 +16,32 @@
         <p>Este es el primer taller de curso JS</p>
     </header>
     
-    <section>
-        <h2>Calcular el área y perímetro de un cuadrado</h2>
+    <section class="bloque-calcular">
+        <h2 class="bloque-calcular-titulo">Calcular el área y perímetro de un cuadrado</h2>
         <form action="">
-            <label for="InputCuadrado">Escribe cuando mide cada lado de tu cuadrado: </label>
-            <input id="InputCuadrado" type="number"/>
-            <button type="button" onclick="calcularPerimetroCuadrado()">Calcular el perímetro</button>
-            <button type="button" onclick="calcularAreaCuadrado()">Calcular el área</button>
+            <label for="InputCuadrado" >Escribe cuando mide cada lado de tu cuadrado: </label>
+            <input id="InputCuadrado" class="input-box" type="number"/>
+            <button class="button-calcular" type="button" onclick="calcularPerimetroCuadrado()">Calcular el perímetro</button>
+            <button class="button-calcular" type="button" onclick="calcularAreaCuadrado()">Calcular el área</button>
         </form>
     </section>
     
+    <section class="bloque-calcular">
+        <h2 class="bloque-calcular-titulo">Calcular el área y perímetro de un triangulo, altura y validar isósceles</h2>
+        <form action="">
+            <label for="InputLado1" >Lado 1: </label>
+            <input id="InputLado1" class="input-box" type="number"/>
+            <label for="InputLado2" >Lado 2: </label>
+            <input id="InputLado2" class="input-box" type="number"/>
+            <label for="InputBase" >Base: </label>
+            <input id="InputBase" class="input-box" type="number"/>
+            <button class="button-calcular" type="button" onclick="validarTrianguloIsosceles()">Validar triangulo isósceles</button>
+            <button class="button-calcular" type="button" onclick="calcularAltura()">Calcular altura</button>
+            <button class="button-calcular" type="button" onclick="calcularPerimetroTriangulo()">Calcular el perímetro</button>
+            <button class="button-calcular" type="button" onclick="calcularAreaTriangulo()">Calcular el área</button>
+        </form>
+    </section>
+
     <script src = "./figuras.js">    </script>
 </body>
 </html>
